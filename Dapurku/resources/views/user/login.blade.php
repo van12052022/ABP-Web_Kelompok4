@@ -16,7 +16,7 @@
                 <div class="login-form">
                     <img src="images/logo.png" alt="Logo" class="logo">
                     <h2 class="title">Masuk</h2>
-                    <form action="login-proses" method="post">
+                    <form method="POST" action="{{route('login.action')}}" >
                         @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -31,19 +31,14 @@
                             <button type="submit" class="btn btn-primary submit-button">Masuk</button>
                         </div>
                     </form>
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
-                    @endif
 
                     <div class="social-login sosmed-list small-triary">
                         <p>Atau masuk dengan</p>
-                        <a href="admin./dashboard"><img src="images/twitter.png" alt="Twitter"></a>
-                        <a href="admin./dashboard"><img src="images/facebook.png" alt="Facebook"></a>
-                        <a href="admin./'dashboard"><img src="images/google.png" alt="Google"></a>
+                        <a href="/dashboard"><img src="images/twitter.png" alt="Twitter"></a>
+                        <a href="/dashboard"><img src="images/facebook.png" alt="Facebook"></a>
+                        <a href="/'dashboard"><img src="images/google.png" alt="Google"></a>
                     </div>
-                    <p class="text-center small-secondary">Belum punya akun? <a href="/signup">Daftar</a></p>
+                    <p class="text-center small-secondary">Belum punya akun? <a href="{{route('register')}}">Daftar</a></p>
                 </div>
             </div>
         </div>
